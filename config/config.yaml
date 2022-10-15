@@ -1,0 +1,54 @@
+# 全局信息
+title: "博久游戏-中心服务器"
+
+# 开发dev  测试test 上线 pro
+active: "dev"
+ser:
+  storage:
+    protocol: "grpc"
+    ip: "127.0.0.1"
+    port: 19001
+    etcdServer: ["127.0.0.1:2379"]
+    regKey: "storage"
+  stream:
+    protocol: "grpc"
+    ip: "127.0.0.1"
+    port: 19002
+
+# 日志配置
+log:
+  path: "./logs"
+  prefix: "center"   # 日志文件前缀
+  level: "debug"    # 日志级别：debug/info/error/warn
+  development: true  # 是否为开发者模式
+  debugFileSuffix: "debug.log"  # debug日志文件后缀
+  warnFileSuffix: "warn.log"    # warn日志文件后缀
+  errorFileSuffix: "error.log"   # error日志文件后缀
+  infoFileSuffix: "info.log"    # info日志文件后缀
+  maxAge: 2        # 保存的最大天数
+  maxBackups: 30  # 最多存在多少个切片文件
+  maxSize: 1  # 日日志文件大小（M）
+mysql-master:
+  addr: "192.168.0.188"
+  port: 3306
+  username: "root"
+  password: "root"
+  database: "bj_server"
+mysql-log:
+  addr: "192.168.0.188"
+  port: 3306
+  username: "root"
+  password: "root"
+  database: "bj_log"
+mysql-slave1:
+  addr: "192.168.0.188"
+  port: 3306
+  username: "root"
+  password: "root"
+  database: "bj_server"
+redis:
+  addr: "192.168.0.188:6379"
+  password: ""
+  db: 3
+  poolSize: 30
+  minIdleConns: 30
